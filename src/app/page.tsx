@@ -9,24 +9,27 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import HeroSection from '@/components/HeroSection';
+import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-black text-white">
       {/* Brand top left */}
-      <div className="fixed top-6 left-8 z-50 text-2xl font-bold tracking-tight select-none pointer-events-none">
-        Mailzinos
+      <div className="fixed top-6 left-8 z-50 text-3xl font-extrabold italic brand-logo tracking-tight select-none pointer-events-none">
+        Ruberic
       </div>
       {/* Glassy Navbar */}
       <nav className="sticky top-6 z-40 flex justify-center w-full">
-        <div className="backdrop-blur-md bg-white/10 border border-white/20 shadow-lg rounded-full w-1/2 h-12 flex items-center justify-between px-8 text-sm font-medium transition-all duration-300">
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 shadow-lg rounded-full w-1/2 h-11 flex items-center justify-between px-3 py-1 text-sm font-medium transition-all duration-300">
           {/* Removed Mailzinos from here */}
-          <div className="flex gap-6">
+          <div className="flex gap-6 items-center pr-6">
             <a href="#features" className="hover:text-cyan-400 transition-colors">Features</a>
             <a href="#pricing" className="hover:text-cyan-400 transition-colors">Pricing</a>
             <a href="#how" className="hover:text-cyan-400 transition-colors">How it works</a>
           </div>
-          <Button size="sm" className="rounded-full px-4 py-1 text-xs border-white border-1">Sign In</Button>
+          <HoverBorderGradient containerClassName="ml-2">
+            <Button size="sm" className="rounded-full text-xs border-none">Sign In</Button>
+          </HoverBorderGradient>
         </div>
       </nav>
       {/* Hero Section */}
@@ -100,13 +103,13 @@ export default function Home() {
       {/* Final CTA */}
       <section className="py-12 px-4 text-center">
         <h2 className="text-2xl font-bold mb-2">Ready to supercharge your outreach?</h2>
-        <p className="text-gray-300 mb-4">Sign up now and get free credits to try Mailzinos.</p>
+        <p className="text-gray-300 mb-4">Sign up now and get free credits to try Ruberic.</p>
         <Button size="lg" className="px-8 py-6 text-lg shadow-lg">Start For Free</Button>
       </section>
 
       {/* Footer */}
       <footer className="py-8 text-center text-gray-500 text-sm border-t border-zinc-800 mt-8">
-        &copy; {new Date().getFullYear()} Mailzinos. Built with Next.js & shadcn/ui.
+        &copy; {new Date().getFullYear()} Ruberic. Built with Next.js & shadcn/ui.
       </footer>
     </div>
   );
