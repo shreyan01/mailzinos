@@ -1,15 +1,11 @@
 
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-} from "@/components/ui/card";
 import HeroSection from '@/components/HeroSection';
 import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
+import { SiSupabase, SiFirebase, SiPostgresql, SiMongodb } from 'react-icons/si';
+import { VscAzure } from "react-icons/vsc";
+import { FaAws } from "react-icons/fa";
+import { BoxReveal } from "@/components/magicui/box-reveal";
 
 export default function Home() {
   return (
@@ -34,79 +30,86 @@ export default function Home() {
       </nav>
       {/* Hero Section */}
       <HeroSection />
-
+      {/*Integrations Section*/}
+      <section className="py-20 px-8 max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold tracking-widest mb-4 bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            Integrates with your favorite <span className="italic font-medium">databases</span>
+          </h2>
+          <p className="text-lg text-zinc-400 max-w-2xl mx-auto font-light">
+            Seamlessly connect with the most popular databases and cloud platforms
+          </p>
+        </div>
+        <div className="relative overflow-hidden h-24 bg-zinc-900/20 rounded-2xl border border-zinc-800/50 backdrop-blur-sm">
+          <div className="flex items-center space-x-16 animate-scroll opacity-60 py-6">
+            <div className="flex items-center space-x-3">
+              <span className="text-orange-400 font-semibold text-lg">Supabase</span>
+              <SiSupabase className="w-10 h-10 text-orange-400" />
+            </div>
+            <div className="flex items-center space-x-3">
+              <span className="text-orange-400 font-semibold text-lg">AWS</span>
+              <FaAws className="w-10 h-10 text-orange-400" />
+            </div>
+            <div className="flex items-center space-x-3">
+              <span className="text-orange-400 font-semibold text-lg">Azure</span>
+              <VscAzure className="w-10 h-10 text-orange-400" />
+            </div>
+            <div className="flex items-center space-x-3">
+              <span className="text-orange-400 font-semibold text-lg">Firebase</span>
+              <SiFirebase className="w-10 h-10 text-orange-400" />
+            </div>
+            <div className="flex items-center space-x-3">
+              <span className="text-orange-400 font-semibold text-lg">PostgreSQL</span>
+              <SiPostgresql className="w-10 h-10 text-orange-400" />
+            </div>
+            <div className="flex items-center space-x-3">
+              <span className="text-orange-400 font-semibold text-lg">MongoDB</span>
+              <SiMongodb className="w-10 h-10 text-orange-400" />
+            </div>
+            {/* Duplicate for seamless loop */}
+            <div className="flex items-center space-x-3">
+              <span className="text-orange-400 font-semibold text-lg">Supabase</span>
+              <SiSupabase className="w-10 h-10 text-orange-400" />
+            </div>
+            <div className="flex items-center space-x-3">
+              <span className="text-orange-400 font-semibold text-lg">AWS</span>
+              <FaAws className="w-10 h-10 text-orange-400" />
+            </div>
+            <div className="flex items-center space-x-3">
+              <span className="text-orange-400 font-semibold text-lg">Azure</span>
+              <VscAzure className="w-10 h-10 text-orange-400" />
+            </div>
+            <div className="flex items-center space-x-3">
+              <span className="text-orange-400 font-semibold text-lg">Firebase</span>
+              <SiFirebase className="w-10 h-10 text-orange-400" />
+            </div>
+            <div className="flex items-center space-x-3">
+              <span className="text-orange-400 font-semibold text-lg">PostgreSQL</span>
+              <SiPostgresql className="w-10 h-10 text-orange-400" />
+            </div>
+            <div className="flex items-center space-x-3">
+              <span className="text-orange-400 font-semibold text-lg">MongoDB</span>
+              <SiMongodb className="w-10 h-10 text-orange-400" />
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Features Section */}
-      <section className="py-12 px-4 max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <Card className="min-w-[250px] max-w-xs mx-auto h-full flex flex-col justify-between bg-zinc-900 text-white border-zinc-800">
-            <CardHeader className="items-center text-center pb-0">
-              <CardTitle>Accurate Email Finder</CardTitle>
-              <CardDescription className="text-gray-400">Find verified emails for any business or professional, powered by advanced algorithms.</CardDescription>
-            </CardHeader>
-            <CardContent className="flex justify-center pt-2 pb-4">
-              <Image src="/globe.svg" alt="Email Finder" width={40} height={40} />
-            </CardContent>
-          </Card>
-          <Card className="min-w-[250px] max-w-xs mx-auto h-full flex flex-col justify-between bg-zinc-900 text-white border-zinc-800">
-            <CardHeader className="items-center text-center pb-0">
-              <CardTitle>Lead Enrichment</CardTitle>
-              <CardDescription className="text-gray-400">Get detailed info: company, role, social links, and more for every contact.</CardDescription>
-            </CardHeader>
-            <CardContent className="flex justify-center pt-2 pb-4">
-              <Image src="/window.svg" alt="Lead Enrichment" width={40} height={40} />
-            </CardContent>
-          </Card>
-          <Card className="min-w-[250px] max-w-xs mx-auto h-full flex flex-col justify-between bg-zinc-900 text-white border-zinc-800">
-            <CardHeader className="items-center text-center pb-0">
-              <CardTitle>Pay-As-You-Go</CardTitle>
-              <CardDescription className="text-gray-400">Only pay for the leads you need. No subscriptions, no hidden fees.</CardDescription>
-            </CardHeader>
-            <CardContent className="flex justify-center pt-2 pb-4">
-              <Image src="/vercel.svg" alt="Pay As You Go" width={40} height={40} />
-            </CardContent>
-          </Card>
+      <section className="py-20 px-8 max-w-6xl mx-auto">
+        <div className="bg-zinc-900/20 rounded-2xl border border-zinc-800/50 backdrop-blur-sm">
+          <BoxReveal boxColor="#fb923c" duration={1}>
+            <div className="text-left mb-12 pl-0">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-widest mb-4 bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                What Ruberic Does
+              </h2>
+              <p className="text-lg text-zinc-400 font-light">
+                Ruberic is a tool that helps you manage your database and cloud platforms
+              </p>
+            </div>
+          </BoxReveal>
         </div>
       </section>
-
-      {/* Pricing Teaser */}
-      <section className="py-12 px-4 text-center">
-        <h2 className="text-2xl font-bold mb-2">Simple, Transparent Pricing</h2>
-        <p className="text-gray-300 mb-4">Buy credits, use them anytime. No monthly commitment.</p>
-        <Button variant="outline" size="lg">See Pricing</Button>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-12 px-4 max-w-4xl mx-auto">
-        <h2 className="text-2xl font-bold text-center mb-8">How It Works</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-          <Card className="bg-zinc-900 text-white border-zinc-800">
-            <CardHeader className="items-center text-center pb-0">
-              <CardTitle>1. Search</CardTitle>
-              <CardDescription className="text-gray-400">Enter a domain, company, or name to find leads.</CardDescription>
-            </CardHeader>
-          </Card>
-          <Card className="bg-zinc-900 text-white border-zinc-800">
-            <CardHeader className="items-center text-center pb-0">
-              <CardTitle>2. Enrich</CardTitle>
-              <CardDescription className="text-gray-400">Get instant enrichment: emails, roles, socials, and more.</CardDescription>
-            </CardHeader>
-          </Card>
-          <Card className="bg-zinc-900 text-white border-zinc-800">
-            <CardHeader className="items-center text-center pb-0">
-              <CardTitle>3. Download & Pay</CardTitle>
-              <CardDescription className="text-gray-400">Download your leads and pay only for what you use.</CardDescription>
-            </CardHeader>
-          </Card>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-12 px-4 text-center">
-        <h2 className="text-2xl font-bold mb-2">Ready to supercharge your outreach?</h2>
-        <p className="text-gray-300 mb-4">Sign up now and get free credits to try Ruberic.</p>
-        <Button size="lg" className="px-8 py-6 text-lg shadow-lg">Start For Free</Button>
-      </section>
-
       {/* Footer */}
       <footer className="py-8 text-center text-gray-500 text-sm border-t border-zinc-800 mt-8">
         &copy; {new Date().getFullYear()} Ruberic. Built with Next.js & shadcn/ui.
