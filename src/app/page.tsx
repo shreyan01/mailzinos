@@ -5,7 +5,7 @@ import { HoverBorderGradient } from '@/components/ui/hover-border-gradient';
 import { SiSupabase, SiFirebase, SiPostgresql, SiMongodb } from 'react-icons/si';
 import { VscAzure } from "react-icons/vsc";
 import { FaAws } from "react-icons/fa";
-import { BoxReveal } from "@/components/magicui/box-reveal";
+import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 
 export default function Home() {
   return (
@@ -96,18 +96,95 @@ export default function Home() {
       </section>
       
       {/* Features Section */}
-      <section className="py-20 px-8 max-w-6xl mx-auto">
-        <div className="bg-zinc-900/20 rounded-2xl border border-zinc-800/50 backdrop-blur-sm">
-          <BoxReveal boxColor="#fb923c" duration={1}>
-            <div className="text-left mb-12 pl-0">
-              <h2 className="text-4xl md:text-5xl font-bold tracking-widest mb-4 bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                What Ruberic Does
-              </h2>
-              <p className="text-lg text-zinc-400 font-light">
-                Ruberic is a tool that helps you manage your database and cloud platforms
-              </p>
-            </div>
-          </BoxReveal>
+      <section className="flex justify-center items-center min-h-[70vh] w-full">
+        <div className="flex justify-center items-center w-full">
+          <BentoGrid className="mt-8 max-w-5xl rounded-3xl">
+                <BentoGridItem
+                  className="md:col-span-2 md:row-span-2 bg-black text-white rounded-3xl"
+                  header={<span className="text-4xl">🟦</span>}
+                  title={<span className="text-xl font-bold">“Schema → Data” in Seconds</span>}
+                  description={
+                    <>
+                      <ul className="list-disc ml-5 text-sm mt-2 space-y-1">
+                        <li>Upload your <b>.sql</b> or <b>.json</b> schema.</li>
+                        <li>Get clean, relationally accurate fake data in seconds.</li>
+                        <li>Works out of the box. No setup. No hacks.</li>
+                      </ul>
+                      <div className="mt-3 text-xs text-blue-300 font-semibold">Instant value</div>
+                    </>
+                  }
+                />
+                <BentoGridItem
+                  className="bg-black text-white rounded-3xl"
+                  header={<span className="text-2xl">🟩</span>}
+                  title={<span className="font-semibold">SQL-Aware, Not Just Random</span>}
+                  description={
+                    <>
+                      <ul className="list-disc ml-5 text-xs mt-1 space-y-1">
+                        <li>Respects foreign keys, enums, constraints, and types.</li>
+                        <li>Not your average Faker script.</li>
+                      </ul>
+                      <div className="mt-2 text-xs text-green-300 font-semibold">Schema intelligence</div>
+                    </>
+                  }
+                />
+                <BentoGridItem
+                  className="bg-black text-white rounded-3xl"
+                  header={<span className="text-2xl">🟨</span>}
+                  title={<span className="font-semibold">Privacy-Safe Testing</span>}
+                  description={
+                    <>
+                      <ul className="list-disc ml-5 text-xs mt-1 space-y-1">
+                        <li>Replace real data with fake, production-grade sets.</li>
+                        <li>Perfect for GDPR-safe staging, demos, and UAT.</li>
+                      </ul>
+                      <div className="mt-2 text-xs text-yellow-200 font-semibold">GDPR & staging</div>
+                    </>
+                  }
+                />
+                <BentoGridItem
+                  className="bg-black text-white rounded-3xl"
+                  header={<span className="text-2xl">🟥</span>}
+                  title={<span className="font-semibold">One-Click JSON & SQL Export</span>}
+                  description={
+                    <>
+                      <ul className="list-disc ml-5 text-xs mt-1 space-y-1">
+                        <li>Generate <b>.sql</b> insert statements or structured <b>.json</b> dumps.</li>
+                        <li>Ready to seed, share, or test instantly.</li>
+                      </ul>
+                      <div className="mt-2 text-xs text-red-300 font-semibold">Dev workflow</div>
+                    </>
+                  }
+                />
+                <BentoGridItem
+                  className="bg-black text-white rounded-3xl"
+                  header={<span className="text-2xl">🟪</span>}
+                  title={<span className="font-semibold">Works with Any Stack</span>}
+                  description={
+                    <>
+                      <ul className="list-disc ml-5 text-xs mt-1 space-y-1">
+                        <li>PostgreSQL, Supabase, Prisma, or raw SQL — adapts to your workflow.</li>
+                        <li>No lock-in.</li>
+                      </ul>
+                      <div className="mt-2 text-xs text-purple-300 font-semibold">Trust & flexibility</div>
+                    </>
+                  }
+                />
+                <BentoGridItem
+                  className="bg-black text-white rounded-3xl"
+                  header={<span className="text-2xl">🟧</span>}
+                  title={<span className="font-semibold">Ship Faster, Safely</span>}
+                  description={
+                    <>
+                      <ul className="list-disc ml-5 text-xs mt-1 space-y-1">
+                        <li>Stop wasting time writing manual seeders.</li>
+                        <li>Get realistic, safe data for every sprint — instantly.</li>
+                      </ul>
+                      <div className="mt-2 text-xs text-orange-300 font-semibold">The painkiller pitch</div>
+                    </>
+                  }
+                />
+              </BentoGrid>
         </div>
       </section>
       {/* Footer */}
